@@ -570,7 +570,7 @@
           </div>
           <!--Right Col-->
           <div class="contact-right">
-            <form name="submit-to-google-sheet">
+            <form id="contact-form">
               <input
                 type="text"
                 name="name"
@@ -617,16 +617,5 @@
       src="https://kit.fontawesome.com/29e1558b27.js"
       crossorigin="anonymous"
     ></script>
-    <script>
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbx0upIV_ub-6Op3_ortb6EFJFZvcVohuYKd07_XEGokfoDWEKmebufMfLfq9GOatt8V-A/exec'
-      const form = document.forms['submit-to-google-sheet']
-    
-      form.addEventListener('submit', e => {
-        e.preventDefault()
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-          .then(response => console.log('Success!', response))
-          .catch(error => console.error('Error!', error.message))
-      })
-    </script>
   </body>
 </html>

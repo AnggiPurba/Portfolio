@@ -46,32 +46,44 @@ window.addEventListener("scroll", function () {
   });
 });
 
-const form = document.getElementById("contact-form");
+const contactForm = document.getElementById("contact-form");
 
-form.addEventListener("submit", function (event) {
+contactForm.addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent the default form submission action
+
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const subject = document.getElementById("subject").value;
   const msg = document.getElementById("msg").value;
 
-  if (name === "" || email === "" || subject === "" || msg === "") {
-    alert("Please fill in all fields.");
-    event.preventDefault(); // Prevent the form from submitting
-  } else if (!validateEmail(email)) {
-    alert("Please enter a valid email address.");
-    event.preventDefault();
-  } else if (!validateName(name)) {
-    alert("Please enter a valid name.");
-    event.preventDefault();
+  // Validate the name field
+  if (name.trim() === "") {
+    alert("Name must be filled.");
+    return;
   }
+
+  // Validate the email field
+  const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  if (!email.match(emailPattern)) {
+    alert("Use a proper Email.");
+    return;
+  }
+
+  // Validate the subject field
+  if (subject.trim() === "") {
+    alert("Subject must be filled.");
+    return;
+  }
+
+  // Validate the message field
+  if (msg.trim() === "") {
+    alert("Message must be filled.");
+    return;
+  }
+
+  // If all fields are valid, you can proceed with form submission
+  // Replace this line with your form submission code
+  // For example, you can use AJAX to send the form data to the server
+  alert("Form submitted successfully!"); // Replace this with your actual submission code
+  contactForm.reset();
 });
-
-function validateEmail(email) {
-  const re = /\S+@\S+\.\S+/;
-  return re.test(email);
-}
-
-function validateName(name) {
-  const re = /\S+@\S+\.\S+/;
-  return re.test(name);
-}

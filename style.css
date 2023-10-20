@@ -85,7 +85,7 @@ header .profile .social-icons a:hover {
   border-radius: 2rem;
   color: var(--sideBGColor);
   background-color: var(--themeColor);
-  border: 2px solid var(--themeColor2);
+  border: 2px solid var(--sideBGColor);
 }
 /*Navbar*/
 header nav {
@@ -93,6 +93,7 @@ header nav {
 }
 header nav ul li {
   list-style: none;
+  text-align: left;
 }
 
 header nav ul li a {
@@ -124,14 +125,8 @@ header nav ul li .active i {
 .footer {
   text-align: center;
   background-color: var(--sideBGColor);
-  width: 1000px;
   color: lightgray;
-  font-size: 14px;
-  letter-spacing: 0.6px;
-  padding: 15px;
-  bottom: 0;
-  left: 0;
-  transition: 0.4s;
+  padding: 10px;
 }
 /*mobile footer*/
 @media only screen and (max-width: 1050px) {

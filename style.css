@@ -400,7 +400,7 @@ main {
 /*---------------------------------------------------*/
 /*facts section start*/
 #fact {
-  padding: 50px 30px;
+  padding: 70px 30px;
   background-color: white;
 }
 #fact .fact-row {
@@ -429,7 +429,7 @@ main {
 /* Mobile View */
 @media only screen and (max-width: 700px) {
   #facts {
-    padding: 40px 15px;
+    padding: 50px 15px;
   }
   #fact .fact-row {
     grid-template-columns: repeat(2, 10);
